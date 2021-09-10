@@ -1,37 +1,66 @@
-# Evaluate a news article with Natural Language Processing
+# Evaluate A News Article with Natural Language Processing
 
-Project of the Nanodegree Course 'Front End Web Development'.
+4th project at [Udacity](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011) Front End Web Developer Nanodegree program.
 
-This project requires the creation of a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. NLP is the ability of an application to understand the human language, written or oral.
+This project aims to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. When a user submits a URL of an article, the web page then dispalys sentiment analysis returned from [meaningcloud API](https://www.meaningcloud.com/products/sentiment-analysis), based on the contents of the article.
 
-## Content
+## Build Tools
+* HTML
+* CSS
+* JavaScript
+* Node
+* Express
+* Webpack
+* meaningcloud API
+* Jest
+* Workbox
 
-### Webpack
+## Installation
+Make sure Node and npm are installed from the terminal.
+```
+node -v
+npm -v
+```
 
-This project uses `Webpack` as the build tool. The configuration can be found on the repository. There are different setups for production and development environments.
+1. Move to the project folder
+```
+cd <project directory>
+```
+2. Clone the repo
+```
+git clone <repo>
+```
+3. Install npm
+```
+npm install
+```
+4. Install loaders and plugins
+```
+# Choose the necessary installation for your development mode
+npm i -D @babel/core @babel/preset-env babel-loader
+npm i -D style-loader node-sass css-loader sass-loader
+npm i -D clean-webpack-plugin
+npm i -D html-webpack-plugin
+npm i -D mini-css-extract-plugin
+npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
+```
+5. Sign up for an API key at [meaningcloud.com](https://www.meaningcloud.com/developer/create-account)
 
-### HTML, CSS, Sass
+6. Configure environment variables using dotenv package
+	1. Install the dotenv package
+	```
+	npm install dotenv
+	```
+	2. Create a new `.env` file in the root of your project
+	3. Fill the `.env` file with your API key like this:
+	```
+	API_KEY=**************************
+	```
+7. Start the project
 
-This project has an static HTML page, which is styled using Sass (later transformed in CSS with specific webpack loaders).
+Command | Action
+:------------: | :-------------:
+`npm run build-prod` | Build project
+`npm start` | Run project
 
-### Node.js and express
-
-The server is set up using `express` and Node is used to install all the dependencies with `npm`.
-
-### API
-
-The API used to interpret the articles is [MeaningCloud Sentiment Analysis API](https://www.meaningcloud.com/developer/sentiment-analysis)
-
-### Jest
-
-The code is tested using [Jest](https://jestjs.io/en/). The directory "__test__" is for that purpose.
-
-### Service Workers
-
-I used [Workbox](https://developers.google.com/web/tools/workbox) to add offline support.
-
-**Obs:** The API cannot be fetched offline. In this project the service worker is used only to mantain the webpage if there is no internet.
-
-
-## License
-[MIT License](https://opensource.org/licenses/MIT).
+8. Open browser at http://localhost:8081/
