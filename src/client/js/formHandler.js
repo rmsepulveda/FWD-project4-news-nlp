@@ -1,7 +1,7 @@
 function handleSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
+    // grab the user input text and store it in formText
     let formText = document.getElementById('url').value
 
     if(Client.checkForURL(formText)) {
@@ -22,7 +22,6 @@ function handleSubmit(event) {
 }
 
 const postData = async (url = "", data = {}) => {
-    //console.log('Analyzing:', data);
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -34,14 +33,13 @@ const postData = async (url = "", data = {}) => {
     });
     try {
         const newData = await response.json();
-        //console.log('Data received:', newData)
         return newData;
     } catch (error) {
         console.log('error', error);
     }
 };
 
-// API response output (https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response)
+// API response output swtich/case the results store in display.
 const polarityChecker = (score) => {
     let display;
     switch (score){
