@@ -1,8 +1,11 @@
-# Project Instructions
+# Project 4: Evaluate a News Article with Natural Language Processing 
 
-This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
+## Overview
 
-The goal of this project is to give you practice with:
+This project is part of Udacity's Front End Development Nanodegree. From the course: 
+> This project requires you to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. 
+
+The goal of this project is to get get used to:
 - Setting up Webpack
 - Sass styles
 - Webpack Loaders and Plugins
@@ -10,67 +13,39 @@ The goal of this project is to give you practice with:
 - Service workers
 - Using APIs and creating requests to external urls
 
-On top of that, I want to introduce you to the topic of Natural Language Processing. NLPs leverage machine learning and deep learning create a program that can interpret natural human speech. Systems like Alexa, Google Assistant, and many voice interaction programs are well known to us, but understanding human speech is an incredibly difficult task and requires a lot of resources to achieve. Full disclosure, this is the Wikipedia definition, but I found it to be a clear one:
+In addition to being able to analyze news articles and blogs through URLs, in my project users can also enter their own text to analyze. 
 
-> Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence
-concerned with the interactions between computers and human (natural) languages, in particular how to program computers to
-process and analyze large amounts of natural language data.
+## Instructions 
+### Setting up the Project :computer:
+Fork the project Github repo, and then clone or download the zip file locally. Once you have the project locally, navigate to the project directory to install all dependencies. 
 
-You could spend years and get a masters degree focusing on the details of creating NLP systems and algorithms. Typically, NLP programs require far more resources than individuals have access to, but a fairly new API called Aylien has put a public facing API in front of their NLP system. We will use it in this project to determine various attributes of an article or blog post.
-
-## Installation
-Make sure Node and npm are installed from the terminal.
-
-node -v
-npm -v
-
-
-## Getting started
-
-It would probably be good to first get your basic project setup and functioning. Follow the steps from the course up to Lesson 4 but don't add Service Workers just yet. We won't need the service workers during development and having extra caches floating around just means there's more potential for confusion. So, fork this repo and begin your project setup.
-
-Remember that once you clone, you will still need to install everything:
-
-1. Move to the project folder
-
+```
 cd <project directory>
-
-2. Clone the repo
-
-git clone <repo>
-
-3. Install npm
-
 npm install
+```
 
-4. Install loaders and plugins
+### Signup for an API key :key:
+First, you will need to go [here](https://www.meaningcloud.com/developer/) and register for an account. Signing up will get you an API key.
 
-# Choose the necessary installation for your development mode
-npm i -D @babel/core @babel/preset-env babel-loader
-npm i -D style-loader node-sass css-loader sass-loader
-npm i -D clean-webpack-plugin
-npm i -D html-webpack-plugin
-npm i -D mini-css-extract-plugin
-npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
-...
+At the root of the project, create a new file named `.env`. Inside the file, add the following line, replacing the stars with your personal API key. 
 
-5. Sign up for an API key at [meaningcloud.com](https://www.meaningcloud.com/developer/create-account)
+`API_KEY=**************************`
 
-6. Configure environment variables using dotenv package
-	1. Install the dotenv package
-	
-	npm install dotenv
-	
-	2. Create a new `.env` file in the root of your project
-	3. Fill the `.env` file with your API key like this:
-	
-	API_KEY=**************************
-	
-7. Start the project
+### After setup :fire:
 
-Command | Action
-:------------: | :-------------:
-`npm run build-prod` | Build project
-`npm start` | Run project
+After you've created your local copy and added your API key to the `.env` file, you're ready to start using it! 
 
-8. Open browser at http://localhost:8081/
+Use the following command to start the developer server. This should open a new window in your browser with the app running on `localhost:8080`
+```
+npm run build-dev
+```
+To run the production server (with express), run these commands
+```
+npm run build-prod
+npm run start
+```
+This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
+
+Now the app should be all set and ready to use. You can enter your own text into the form to analyze it, or enter a URL to an article of blog post instead. 
+
+For more information on the results of the text analysis, check out the [MeaningCloud API documentation](https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response).
