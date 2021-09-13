@@ -27,7 +27,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
-            // Reference (https://webpack.js.org/loaders/file-loader/)
+
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 loader: 'file-loader',

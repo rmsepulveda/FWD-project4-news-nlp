@@ -5,12 +5,12 @@ function handleSubmit(event) {
     let formText = document.getElementById('url').value
 
     if(Client.checkForURL(formText)) {
-    console.log("::: Form Submitted :::")
+    //console.log("Form Submitted")
 
     postData('http://localhost:8081/api', {url: formText})
 
-    .then(function(res) {
-        document.getElementById('polarity').innerHTML = 'Polarity: '+polarityChecker(res.score_tag);
+    .then(function(res) {//fill in the with output data
+        document.getElementById('polarity').innerHTML = 'Polarity: '+polarityChecker(res.score_tag);//check polarity data
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
         document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
@@ -39,7 +39,7 @@ const postData = async (url = "", data = {}) => {
     }
 };
 
-// API response output swtich/case the results store in display.
+// API response output swtich/case the score results store in display.
 const polarityChecker = (score) => {
     let display;
     switch (score){
