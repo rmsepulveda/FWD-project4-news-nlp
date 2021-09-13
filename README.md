@@ -16,7 +16,6 @@ The goal of this project is to get get used to:
 ## Instructions 
 ### Setting up the Project 
 Fork the project Github repo, and then clone or download the zip file locally. Once you have the project locally, navigate to the project directory to install all dependencies. 
-
 ```
 cd <project directory>
 npm install
