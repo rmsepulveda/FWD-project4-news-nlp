@@ -43,7 +43,3 @@ npm run build-prod
 npm run start
 ```
 This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
-
-Now the app should be all set and ready to use.
-
-For more information on the results of the text analysis, check out the [MeaningCloud API documentation](https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response).
