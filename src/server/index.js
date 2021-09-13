@@ -14,7 +14,7 @@ const app = express()
 const cors = require('cors');
 
 app.use(cors());
-app.use(bodyParser.json())
+app.use(bodyParser.json())//bodyParser not needed with express ver 4.16.0 or higher
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 app.use(express.static('dist'))
@@ -25,7 +25,7 @@ console.log(__dirname)
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 const apiKey = process.env.API_KEY
 console.log(`Your API Key is ${process.env.API_KEY}`);
-let userInput = [] // const does not work
+let userInput = []
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -50,5 +50,5 @@ app.post('/api', async function(req, res) {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+    console.log('Example app listening on port 8081')
 })

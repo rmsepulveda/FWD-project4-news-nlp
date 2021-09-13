@@ -10,14 +10,14 @@ function handleSubmit(event) {
     postData('http://localhost:8081/api', {url: formText})
 
     .then(function(res) {//fill in the with output data
-        document.getElementById('polarity').innerHTML = 'Polarity: '+polarityChecker(res.score_tag);//check polarity data
+        document.getElementById('polarity').innerHTML = 'Polarity: ' + polarityChecker(res.score_tag);//check polarity data
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
         document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
         document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
     })
     } else {
-        alert('Seems like an invalid URL, please try with a valid URL.');
+        alert('Invalid URL, please try with a valid URL.');
     }
 }
 
