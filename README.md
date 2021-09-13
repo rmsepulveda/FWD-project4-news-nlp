@@ -14,7 +14,7 @@ The goal of this project is to get get used to:
 - Using APIs and creating requests to external urls
 
 ## Instructions 
-### Setting up the Project :computer:
+### Setting up the Project 
 Fork the project Github repo, and then clone or download the zip file locally. Once you have the project locally, navigate to the project directory to install all dependencies. 
 
 ```
@@ -22,7 +22,7 @@ cd <project directory>
 npm install
 ```
 
-### Signup for an API key :key:
+### Signup for an API key 
 First, you will need to go [here](https://www.meaningcloud.com/developer/) and register for an account. Signing up will get you an API key.
 
 At the root of the project, create a new file named `.env`. Inside the file, add the following line, replacing the stars with your personal API key. 
