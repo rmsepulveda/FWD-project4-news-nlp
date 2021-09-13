@@ -2,8 +2,7 @@
 
 ## Overview
 
-This project is part of Udacity's Front End Development Nanodegree. From the course: 
-> This project requires you to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. 
+This project requires you to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. 
 
 The goal of this project is to get get used to:
 - Setting up Webpack
