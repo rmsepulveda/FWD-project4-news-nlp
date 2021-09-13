@@ -13,8 +13,6 @@ The goal of this project is to get get used to:
 - Service workers
 - Using APIs and creating requests to external urls
 
-In addition to being able to analyze news articles and blogs through URLs, in my project users can also enter their own text to analyze. 
-
 ## Instructions 
 ### Setting up the Project :computer:
 Fork the project Github repo, and then clone or download the zip file locally. Once you have the project locally, navigate to the project directory to install all dependencies. 
@@ -39,13 +37,13 @@ Use the following command to start the developer server. This should open a new 
 ```
 npm run build-dev
 ```
-To run the production server (with express), run these commands
+To run the production server, run these commands
 ```
 npm run build-prod
 npm run start
 ```
 This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
 
-Now the app should be all set and ready to use. You can enter your own text into the form to analyze it, or enter a URL to an article of blog post instead. 
+Now the app should be all set and ready to use.
 
 For more information on the results of the text analysis, check out the [MeaningCloud API documentation](https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response).
