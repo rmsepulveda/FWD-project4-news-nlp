@@ -21,18 +21,17 @@ function handleSubmit(event) {
 }
 
 const scoreConverter = (sTag) => {
-    console.log(sTag);
-    if(sTag = "P"){
+    if(sTag == "P"){
         return "Positive"
-    }else if(sTag = "P+"){
+    }else if(sTag == "P+"){
         return "Strong Positive"
-    }else if(sTag = "NEW"){
+    }else if(sTag == "NEW"){
         return "Neutral"
-    }else if(sTag = "N"){
+    }else if(sTag == "N"){
         return "Negative"
-    }else if(sTag = "N+"){
+    }else if(sTag == "N+"){
         return "Strong Negative"
-    }else if(sTag = "NONE"){
+    }else if(sTag == "NONE"){
         return "No Sentiment"
     }else {
         return "No data"
