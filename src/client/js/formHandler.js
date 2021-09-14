@@ -1,24 +1,44 @@
 function handleSubmit(event) {
     event.preventDefault()
 
-    // grab the user input text and store it in formText
     let formText = document.getElementById('url').value
 
     if(Client.checkForURL(formText)) {
-    //console.log("Form Submitted")
 
     postData('http://localhost:8081/api', {url: formText})
 
-    .then(function(res) {//fill in the with output data
+    .then(function(res) {
         document.getElementById('model').innerHTML = `Model:  ${res.model}`;
-        document.getElementById("scoreTag").innerHTML = `Score: ${res.score_tag}`;
+        //document.getElementById("scoreTag").innerHTML = `Score: ${res.score_tag}`;
+        document.getElementById("scoreTag").innerHTML = 'Score:' + scoreConverter(res.score_tag);
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
-        //document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
-    })
+        document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
+        document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
+     })
     } else {
         alert('Invalid URL, please try with a valid URL.');
     }
+}
+
+const scoreConverter = (sTag) => {
+    console.log(sTag);
+    if(sTag = "P"){
+        return "Positive"
+    }else if(sTag = "P+"){
+        return "Strong Positive"
+    }else if(sTag = "NEW"){
+        return "Neutral"
+    }else if(sTag = "N"){
+        return "Negative"
+    }else if(sTag = "N+"){
+        return "Strong Negative"
+    }else if(sTag = "NONE"){
+        return "No Sentiment"
+    }else {
+        return "No data"
+    }
+
 }
 
 const postData = async (url = "", data = {}) => {
@@ -32,36 +52,11 @@ const postData = async (url = "", data = {}) => {
         body: JSON.stringify(data)
     });
     try {
-        const newData = await response.json();
-        return newData;
+        const retData = await response.json();
+        return retData;
     } catch (error) {
         console.log('error', error);
     }
 };
 
-// API response output swtich/case the score results store in display.
-/*const polarityChecker = (score) => {
-    let display;
-    switch (score){
-        case 'P+':
-            display = 'strong positive';
-            break;
-        case 'P':
-            display = 'positive';
-            break;
-        case 'NEW':
-            display = 'neutral';
-            break;
-        case 'N':
-            display = 'negative';
-            break;
-        case 'N+':
-            display = 'strong negative';
-            break;
-        case 'NONE':
-            display = 'no sentiment';
-    }
-    return display.toUpperCase();
-}*/
 export { handleSubmit }
-//export { polarityChecker }
