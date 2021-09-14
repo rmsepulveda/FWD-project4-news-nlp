@@ -10,7 +10,7 @@ function handleSubmit(event) {
     postData('http://localhost:8081/api', {url: formText})
 
     .then(function(res) {//fill in the with output data
-        document.getElementById('model').innerHTML = 'Polarity: ' ${res.model};
+        document.getElementById('model').innerHTML = `Model:  ${res.model}`;
         document.getElementById("scoreTag").innerHTML = `Score: ${res.score_tag}`;
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
@@ -64,4 +64,4 @@ const postData = async (url = "", data = {}) => {
     return display.toUpperCase();
 }*/
 export { handleSubmit }
-export { polarityChecker }
+//export { polarityChecker }
