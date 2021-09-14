@@ -10,11 +10,11 @@ function handleSubmit(event) {
     postData('http://localhost:8081/api', {url: formText})
 
     .then(function(res) {//fill in the with output data
-        document.getElementById('polarity').innerHTML = 'Polarity: ' + polarityChecker(res.score_tag);//check polarity data
+        document.getElementById('model').innerHTML = 'Polarity: ' ${res.model};
+        document.getElementById("scoreTag").innerHTML = `Score: ${res.score_tag}`;
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
-        document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
-        document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
+        //document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
     })
     } else {
         alert('Invalid URL, please try with a valid URL.');
@@ -40,7 +40,7 @@ const postData = async (url = "", data = {}) => {
 };
 
 // API response output swtich/case the score results store in display.
-const polarityChecker = (score) => {
+/*const polarityChecker = (score) => {
     let display;
     switch (score){
         case 'P+':
@@ -62,7 +62,6 @@ const polarityChecker = (score) => {
             display = 'no sentiment';
     }
     return display.toUpperCase();
-}
-
+}*/
 export { handleSubmit }
 export { polarityChecker }
