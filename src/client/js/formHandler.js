@@ -9,7 +9,7 @@ function handleSubmit(event) {
 
     .then(function(res) {
         document.getElementById('model').innerHTML = `Model:  ${res.model}`;
-        document.getElementById("scoreTag").innerHTML = 'Score:' + scoreConverter(res.score_tag);
+        document.getElementById("scoreTag").innerHTML = 'Polarity:' + scoreConverter(res.score_tag);
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
         document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
