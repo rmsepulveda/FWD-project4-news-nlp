@@ -6,7 +6,7 @@ const mockAPIResponse = require('./mockAPI.js')
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Start app
+// Create new instance of express
 const app = express()
 
 const cors = require('cors');
@@ -17,10 +17,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 app.use(express.static('dist'))
 
-// API
+// API setup
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 const apiKey = process.env.API_KEY
-let userInput = []
+
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -30,7 +30,8 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-// POST Route
+// POST API and fetch API data
+let userInput = []
 app.post('/api', async function(req, res) {
     userInput = req.body.url;
     const apiURL = `${baseURL}key=${apiKey}&url=${userInput}&lang=en`
@@ -40,7 +41,7 @@ app.post('/api', async function(req, res) {
     res.send(objectData)
 })
 
-// designates what port the app will listen to for incoming requests
+// set express server to listen on port 8081 and console logs for verification
 app.listen(8081, function () {
-    console.log('app listening on port 8081')
+    console.log('Express server is up and listening on port 8081')
 })

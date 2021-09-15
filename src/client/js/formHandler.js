@@ -12,7 +12,7 @@ function handleSubmit(event) {
         document.getElementById("scoreTag").innerHTML = 'Polarity:' + scoreConverter(res.score_tag);
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
         document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
-        document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
+        document.getElementById("confidence").innerHTML = `Confidence range 0-100: ${res.confidence}`;
         document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
      })
     } else {
@@ -25,7 +25,7 @@ const scoreConverter = (sTag) => {
         return "Positive"
     }else if(sTag == "P+"){
         return "Strong Positive"
-    }else if(sTag == "NEW"){
+    }else if(sTag == "NEU"){
         return "Neutral"
     }else if(sTag == "N"){
         return "Negative"
