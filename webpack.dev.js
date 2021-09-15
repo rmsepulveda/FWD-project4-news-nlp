@@ -13,12 +13,6 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
-    devServer:{
-        contentBase: 'src/',
-        publicPath: 'src/',
-        inline: true,
-        hot: true,
-      },
     module: {
         rules: [
             {
