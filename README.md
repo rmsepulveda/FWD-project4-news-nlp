@@ -26,7 +26,7 @@ At the root of the project, create a new file named `.env`. Inside the file, add
 
 `API_KEY=**************************`
 
-### After setup
+### Mode setup
 
 After you've created your local copy and added your API key to the `.env` file, you're ready to start using it! 
 
