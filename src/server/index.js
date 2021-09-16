@@ -21,13 +21,8 @@ app.use(express.static('dist'))
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 const apiKey = process.env.API_KEY
 
-
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
 })
 
 // POST API and fetch API data
@@ -45,3 +40,9 @@ app.post('/api', async function(req, res) {
 app.listen(8081, function () {
     console.log('Express server is up and listening on port 8081')
 })
+
+app.get('/test', function (req, res) {
+    res.send(mockAPIResponse)
+})
+
+
