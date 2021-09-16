@@ -46,7 +46,7 @@ In terminal 1:  This should open a new window in your browser with the app runni
 
 npm run build-dev
 
-```
+
 In terminal 2:  to be able to make the API calls
 
 npm run start
