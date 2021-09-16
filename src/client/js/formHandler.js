@@ -1,6 +1,6 @@
 function handleSubmit(event) {
     event.preventDefault()
-
+    clearResults()
     let formText = document.getElementById('url').value
 
     if(Client.checkForURL(formText)) {
@@ -37,6 +37,15 @@ const scoreConverter = (sTag) => {
         return "No data"
     }
 
+}
+
+const clearResults = () => {
+    document.getElementById('model').innerHTML = "";
+    document.getElementById("scoreTag").innerHTML = "";
+    document.getElementById("agreement").innerHTML = "";
+    document.getElementById("subjectivity").innerHTML = "";
+    document.getElementById("confidence").innerHTML = "";
+    document.getElementById("irony").innerHTML = "";
 }
 
 const postData = async (url = "", data = {}) => {
