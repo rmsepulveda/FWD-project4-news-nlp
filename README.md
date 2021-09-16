@@ -19,7 +19,6 @@ Fork the project Github repo, and then clone or download the zip file locally. O
 cd <project directory>
 npm install
 ```
-
 ### Signup for an API key 
 First, you will need to go [here](https://www.meaningcloud.com/developer/) and register for an account. Signing up will get you an API key.
 
@@ -31,13 +30,15 @@ At the root of the project, create a new file named `.env`. Inside the file, add
 
 After you've created your local copy and added your API key to the `.env` file, you're ready to start using it! 
 
-Use the following command to start the developer server. This should open a new window in your browser with the app running on `localhost:8080`
-```
-npm run build-dev
-```
+
 To run the production server, run these commands
 ```
 npm run build-prod
 npm run start
 ```
+To start the developer server. This should open a new window in your browser with the app running on `localhost:8080`
+```
+npm run build-dev
+```
+
 This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
