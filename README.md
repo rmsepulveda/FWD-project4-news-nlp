@@ -35,15 +35,11 @@ To run the production server use these commands
 ```
 npm run build-prod
 npm run start
-
 ```
 This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
 
 ### Development mode
 To start the developer server. Open two terminals and run these commands. 
-
-
-
 
 Terminal one | Terminal two
 ------------ | -------------
