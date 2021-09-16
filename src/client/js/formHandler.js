@@ -21,6 +21,7 @@ function handleSubmit(event) {
 }
 
 const scoreConverter = (sTag) => {
+   
     if(sTag == "P"){
         return "Positive"
     }else if(sTag == "P+"){

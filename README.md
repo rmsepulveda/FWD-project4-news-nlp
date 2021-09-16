@@ -54,3 +54,6 @@ npm run start
 ```
 
 
+Terminal one | Terminal two
+------------ | -------------
+npm run build-dev | npm run start
