@@ -3,7 +3,7 @@ function handleSubmit(event) {
     clearResults()
     let formText = document.getElementById('url').value
 
-    if(Client.checkForURL(formText)) {
+    if(Client.checkIfURL(formText)) {
 
     postData('http://localhost:8081/api', {url: formText})
 
@@ -21,7 +21,6 @@ function handleSubmit(event) {
 }
 
 const scoreConverter = (sTag) => {
-   
     if(sTag == "P"){
         return "Positive"
     }else if(sTag == "P+"){
@@ -37,7 +36,6 @@ const scoreConverter = (sTag) => {
     }else {
         return "No data"
     }
-
 }
 
 const clearResults = () => {
