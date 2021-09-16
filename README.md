@@ -36,9 +36,12 @@ To run the production server, run these commands
 npm run build-prod
 npm run start
 ```
+This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
+
+
 To start the developer server. This should open a new window in your browser with the app running on `localhost:8080`
 ```
 npm run build-dev
 ```
 
-This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
+
