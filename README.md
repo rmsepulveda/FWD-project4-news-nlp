@@ -30,8 +30,8 @@ At the root of the project, create a new file named `.env`. Inside the file, add
 
 After you've created your local copy and added your API key to the `.env` file, you're ready to start using it! 
 
-### Production setup
-To run the production server these commands
+### Production mode
+To run the production server use these commands
 ```
 npm run build-prod
 npm run start
@@ -39,7 +39,7 @@ npm run start
 ```
 This will create a `dist` folder with the built code. The production server runs on `localhost:8081`
 
-### Development setup
+### Development mode
 To start the developer server. Open two terminals and run these commands. 
 ```
 In terminal 1:  This should open a new window in your browser with the app running on `localhost:8080`
