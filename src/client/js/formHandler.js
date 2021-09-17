@@ -1,12 +1,14 @@
 function handleSubmit(event) {
-    event.preventDefault()
-    clearResults()
-    let formText = document.getElementById('url').value
+    event.preventDefault()// prevents anymore events
+    clearResults()// clears form results
+    let formText = document.getElementById('url').value// grabs input form text
 
+    // checks if user URL input is valid
     if(Client.checkIfURL(formText)) {
-
+    //call postData fucntion with route /api
     postData('http://localhost:8081/api', {url: formText})
-
+    
+    // write return data to web page form
     .then(function(res) {
         document.getElementById('model').innerHTML = `Model:  ${res.model}`;
         document.getElementById("scoreTag").innerHTML = 'Polarity:' + scoreConverter(res.score_tag);
@@ -20,6 +22,7 @@ function handleSubmit(event) {
     }
 }
 
+// function to convert json res.score_tag to a word
 const scoreConverter = (sTag) => {
     if(sTag == "P"){
         return "Positive"
@@ -38,6 +41,7 @@ const scoreConverter = (sTag) => {
     }
 }
 
+// function to clear form results
 const clearResults = () => {
     document.getElementById('model').innerHTML = "";
     document.getElementById("scoreTag").innerHTML = "";
@@ -47,6 +51,7 @@ const clearResults = () => {
     document.getElementById("irony").innerHTML = "";
 }
 
+// PostData function to post API to express server and return API response in retData
 const postData = async (url = "", data = {}) => {
     const response = await fetch(url, {
         method: 'POST',
