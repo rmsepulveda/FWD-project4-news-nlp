@@ -15,6 +15,9 @@ function handleSubmit(event) {
                 document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
                 document.getElementById("confidence").innerHTML = `Confidence range 0-100: ${res.confidence}`;
                 document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
+                if(res.model != "general_en"){
+                    alert('Something went wrong with your request. Please try another URL.');
+                }
             })
     } else {
         alert('Invalid URL, please try with a valid URL.');
