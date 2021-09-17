@@ -13,8 +13,7 @@ The goal of this project is to get get used to:
 - Using APIs and creating requests to external urls
 
 ## per install node JS and npm - run these commands to check
-node -v
-npm -v
+node -v and npm -v
 
 ## Instructions 
 ### Setting up the Project 
