@@ -5,18 +5,17 @@ function handleSubmit(event) {
 
     // checks if user URL input is valid
     if(Client.checkIfURL(formText)) {
-    //call postData fucntion with route /api
-    postData('http://localhost:8081/api', {url: formText})
-    
-    // write return data to web page form
-    .then(function(res) {
-        document.getElementById('model').innerHTML = `Model:  ${res.model}`;
-        document.getElementById("scoreTag").innerHTML = 'Polarity:' + scoreConverter(res.score_tag);
-        document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
-        document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
-        document.getElementById("confidence").innerHTML = `Confidence range 0-100: ${res.confidence}`;
-        document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
-     })
+        //call postData fucntion with route /api
+        postData('http://localhost:8081/api', {url: formText})
+            // write return data to web page form
+            .then(function(res) {
+                document.getElementById('model').innerHTML = `Model:  ${res.model}`;
+                document.getElementById("scoreTag").innerHTML = 'Polarity:' + scoreConverter(res.score_tag);
+                document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
+                document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
+                document.getElementById("confidence").innerHTML = `Confidence range 0-100: ${res.confidence}`;
+                document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
+            })
     } else {
         alert('Invalid URL, please try with a valid URL.');
     }

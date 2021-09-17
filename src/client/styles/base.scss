@@ -1,5 +1,7 @@
-$keycolor: rgb(71, 97, 245);
+$hovercolor: rgb(45, 228, 21);
 $font_stack: Roboto, sans-serif;
+$anchorcolor: #000;
+$backcolor: rgba(230, 230, 230, 0.8);
 
 body {
     display: flex;
@@ -13,29 +15,27 @@ main {
     flex: 2;
     justify-content: center;
     text-align: center;
-    margin: 8rem;
+    margin: 2rem;
     font: 200 1rem $font_stack;
-    background: rgba(230, 230, 230, 0.8);
+    background: $backcolor;
+    border-radius: 10px;
 }
 
 p {
-    margin: 1rem;
+    margin: 2rem;
 }
-
-
 
 section {
     max-width: 800px;
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
 a:link,
 a:visited {
-    color: #000;
-    text-decoration: none;
+    color: $anchorcolor;
+    
 }
 
-
 a:hover {
-    color: $keycolor;
+    color: $hovercolor;
 }
