@@ -12,6 +12,10 @@ The goal of this project is to get get used to:
 - Service workers
 - Using APIs and creating requests to external urls
 
+## per install node JS and npm - run these commands to check
+node -v
+npm -v
+
 ## Instructions 
 ### Setting up the Project 
 Fork the project Github repo, and then clone or download the zip file locally. Once you have the project locally, navigate to the project directory to install all dependencies. 
