@@ -23,7 +23,7 @@ app.use(express.static('dist'))
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
 const apiKey = process.env.API_KEY
 
-// route / send index.html file - entry point
+// route / send index.html file - production entry point
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
