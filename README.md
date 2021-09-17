@@ -12,7 +12,7 @@ The goal of this project is to get get used to:
 - Service workers
 - Using APIs and creating requests to external urls
 
-## per install node JS and npm - run these commands to check
+## per install node JS and npm - run these commands to check if installed
 node -v and npm -v
 
 ## Instructions 
