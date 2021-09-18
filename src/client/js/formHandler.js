@@ -9,6 +9,7 @@ function handleSubmit(event) {
         Client.postApi('http://localhost:8081/api', {url: formText})
             // write return data to web page form
             .then(function(res) {
+                //build form htlm
                 let resDataToHtml = "";
                 resDataToHtml += `Model:  ${res.model}<br>`;
                 resDataToHtml += `Polarity:  ${Client.scoreConverter(res.score_tag)}<br>`;
@@ -16,8 +17,9 @@ function handleSubmit(event) {
                 resDataToHtml += `Subjectivity:  ${res.subjectivity}<br>`;
                 resDataToHtml += `Confidence range 0-100:  ${res.confidence}<br>`;
                 resDataToHtml += `Irony:  ${res.irony}`;
+                //write results to web page
                 document.getElementById('results').innerHTML = resDataToHtml;
-                if(res.model != "general_en"){
+                if(res.model != "general_en"){//check for bad data
                     alert('Something went wrong with your request. Please try another URL.');
                 }
             })
