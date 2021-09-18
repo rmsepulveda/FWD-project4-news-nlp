@@ -16,4 +16,27 @@ const postApi = async (url = "", data = {}) => {
         console.log('error', error);
     }
 };
-export { postApi }
+
+// function to convert json res.score_tag to a word
+const scoreConverter = (sTag) => {
+    if(sTag == "P"){
+        return "Positive"
+    }else if(sTag == "P+"){
+        return "Strong Positive"
+    }else if(sTag == "NEU"){
+        return "Neutral"
+    }else if(sTag == "N"){
+        return "Negative"
+    }else if(sTag == "N+"){
+        return "Strong Negative"
+    }else if(sTag == "NONE"){
+        return "No Sentiment"
+    }else {
+        return "No data"
+    }
+};
+
+export { 
+    postApi,
+    scoreConverter
+}

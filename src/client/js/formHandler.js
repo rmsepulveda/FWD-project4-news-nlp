@@ -11,7 +11,7 @@ function handleSubmit(event) {
             .then(function(res) {
                 let resDataToHtml = "";
                 resDataToHtml += `Model:  ${res.model}<br>`;
-                resDataToHtml += `Polarity:  ${scoreConverter(res.score_tag)}<br>`;
+                resDataToHtml += `Polarity:  ${Client.scoreConverter(res.score_tag)}<br>`;
                 resDataToHtml += `Agreement:  ${res.agreement}<br>`;
                 resDataToHtml += `Subjectivity:  ${res.subjectivity}<br>`;
                 resDataToHtml += `Confidence range 0-100:  ${res.confidence}<br>`;
@@ -23,25 +23,6 @@ function handleSubmit(event) {
             })
     } else {
         alert('Invalid URL, please try with a valid URL.');
-    }
-}
-
-// function to convert json res.score_tag to a word
-const scoreConverter = (sTag) => {
-    if(sTag == "P"){
-        return "Positive"
-    }else if(sTag == "P+"){
-        return "Strong Positive"
-    }else if(sTag == "NEU"){
-        return "Neutral"
-    }else if(sTag == "N"){
-        return "Negative"
-    }else if(sTag == "N+"){
-        return "Strong Negative"
-    }else if(sTag == "NONE"){
-        return "No Sentiment"
-    }else {
-        return "No data"
     }
 }
 

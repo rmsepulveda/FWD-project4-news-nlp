@@ -1,7 +1,8 @@
 // js files
 import { checkIfURL } from './js/urlTester'
 import { handleSubmit } from './js/formHandler'
-import { postApi } from './js/postIt'
+import { postApi } from './js/utils'
+import { scoreConverter } from './js/utils'
 
 // sass files
 import './styles/resets.scss'
@@ -13,5 +14,6 @@ import './styles/header.scss'
 export {
     checkIfURL,
     handleSubmit,
-    postApi
+    postApi,
+    scoreConverter
    }
