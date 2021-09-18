@@ -1,5 +1,5 @@
 // PostData function to post API to express server and return API response in retData
-const postData = async (url = "", data = {}) => {
+const postApi = async (url = "", data = {}) => {
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -16,4 +16,4 @@ const postData = async (url = "", data = {}) => {
         console.log('error', error);
     }
 };
-export { postData }
+export { postApi }

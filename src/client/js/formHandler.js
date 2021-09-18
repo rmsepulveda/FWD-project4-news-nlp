@@ -1,12 +1,12 @@
 function handleSubmit(event) {
     event.preventDefault()// prevents anymore events
-    clearResults()// clears form results
+    document.getElementById('results').innerHTML = "";// clears form results
     let formText = document.getElementById('url').value// grabs input form text
 
     // checks if user URL input is valid
     if(Client.checkIfURL(formText)) {
         //call postData fucntion with route /api
-        Client.postData('http://localhost:8081/api', {url: formText})
+        Client.postApi('http://localhost:8081/api', {url: formText})
             // write return data to web page form
             .then(function(res) {
                 let resDataToHtml = "";
@@ -44,29 +44,5 @@ const scoreConverter = (sTag) => {
         return "No data"
     }
 }
-
-// function to clear form results
-const clearResults = () => {
-    document.getElementById('results').innerHTML = "";
-}
-
-// PostData function to post API to express server and return API response in retData
-/*const postData = async (url = "", data = {}) => {
-    const response = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        mode: 'cors',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    });
-    try {
-        const retData = await response.json();
-        return retData;
-    } catch (error) {
-        console.log('error', error);
-    }
-};*/
 
 export { handleSubmit }
