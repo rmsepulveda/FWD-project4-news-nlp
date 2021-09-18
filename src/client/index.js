@@ -1,6 +1,7 @@
 // js files
 import { checkIfURL } from './js/urlTester'
 import { handleSubmit } from './js/formHandler'
+import { postData } from './js/postIt'
 
 // sass files
 import './styles/resets.scss'
@@ -11,5 +12,6 @@ import './styles/header.scss'
 
 export {
     checkIfURL,
-    handleSubmit
+    handleSubmit,
+    postData
    }
