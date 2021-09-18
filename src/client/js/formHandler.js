@@ -3,7 +3,7 @@ function handleSubmit(event) {
     document.getElementById('results').innerHTML = "";// clears form results
     let formText = document.getElementById('url').value// grabs input form text
 
-    // checks if user URL input is valid
+    // checks if user URL input is valid - if true call postApi
     if(Client.checkIfURL(formText)) {
         //call postData fucntion with route /api
         Client.postApi('http://localhost:8081/api', {url: formText})
