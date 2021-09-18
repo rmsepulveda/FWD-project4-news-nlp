@@ -9,12 +9,14 @@ function handleSubmit(event) {
         postData('http://localhost:8081/api', {url: formText})
             // write return data to web page form
             .then(function(res) {
-                document.getElementById('model').innerHTML = `Model:  ${res.model}`;
-                document.getElementById("scoreTag").innerHTML = 'Polarity:' + scoreConverter(res.score_tag);
-                document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
-                document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
-                document.getElementById("confidence").innerHTML = `Confidence range 0-100: ${res.confidence}`;
-                document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
+                let resDataToHtml = "";
+                resDataToHtml += `Model:  ${res.model}<br>`;
+                resDataToHtml += `Polarity:  ${scoreConverter(res.score_tag)}<br>`;
+                resDataToHtml += `Agreement:  ${res.agreement}<br>`;
+                resDataToHtml += `Subjectivity:  ${res.subjectivity}<br>`;
+                resDataToHtml += `Confidence range 0-100:  ${res.confidence}<br>`;
+                resDataToHtml += `Irony:  ${res.irony}`;
+                document.getElementById('results').innerHTML = resDataToHtml;
                 if(res.model != "general_en"){
                     alert('Something went wrong with your request. Please try another URL.');
                 }
@@ -45,12 +47,7 @@ const scoreConverter = (sTag) => {
 
 // function to clear form results
 const clearResults = () => {
-    document.getElementById('model').innerHTML = "";
-    document.getElementById("scoreTag").innerHTML = "";
-    document.getElementById("agreement").innerHTML = "";
-    document.getElementById("subjectivity").innerHTML = "";
-    document.getElementById("confidence").innerHTML = "";
-    document.getElementById("irony").innerHTML = "";
+    document.getElementById('results').innerHTML = "";
 }
 
 // PostData function to post API to express server and return API response in retData
